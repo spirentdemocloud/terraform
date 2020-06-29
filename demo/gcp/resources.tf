@@ -3,7 +3,7 @@
 # ---------------------------------------------------------------------------------------------------------------------
 
 resource "google_compute_instance" "vm_instance" {
-  name         = "terraform-instance"
+  name         = "single-Velocity"
   machine_type = "f1-micro"
 
   boot_disk {
@@ -25,6 +25,6 @@ resource "google_compute_instance" "vm_instance" {
 # ---------------------------------------------------------------------------------------------------------------------
 
 resource "google_compute_network" "vpc_network" {
-  name                    = "terraform-network"
+  name                    = "network-Velocity"
   auto_create_subnetworks = "true"
 }
