@@ -18,9 +18,12 @@ provider "azurerm" {
     features {}
 
     # -------------  
-    # The service account is not working. Use az cli until then.
+    # The service account is not working. 
+    # Login using az cli until then.
 
-    #subscription_id = var.subscription_id}
+    # This information is picked up from credentials.tf 
+    # which is not checked into source control for security reasons
+    #subscription_id = var.subscription_id
     #tenant_id = var.tenant_id
     #client_id = var.client_id
     #client_secret = var.client_secret
