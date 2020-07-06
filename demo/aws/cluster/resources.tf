@@ -30,7 +30,7 @@ resource "aws_autoscaling_group" "asg" {
 
   tag {
     key                 = "Name"
-    value               = "cluster-Velocity"
+    value               = "trinity-web-cluster"
     propagate_at_launch = true
   }
 }
@@ -64,7 +64,8 @@ resource "aws_launch_configuration" "launch_config" {
 # ---------------------------------------------------------------------------------------------------------------------
 
 resource "aws_security_group" "secgrp_instance" {
-  name = "secgrp-instance-Velocity"
+  name        = "trinity-secgrp-instance"
+  description = "Managed by Spirent Velocity"
 
   # Inbound HTTP from anywhere
   ingress {
@@ -80,7 +81,7 @@ resource "aws_security_group" "secgrp_instance" {
 # ---------------------------------------------------------------------------------------------------------------------
 
 resource "aws_elb" "load_balancer" {
-  name               = "elb-Velocity"
+  name               = "trinity-elb"
   security_groups    = [aws_security_group.secgrp_elb.id]
   availability_zones = data.aws_availability_zones.all.names
 
@@ -106,7 +107,8 @@ resource "aws_elb" "load_balancer" {
 # ---------------------------------------------------------------------------------------------------------------------
 
 resource "aws_security_group" "secgrp_elb" {
-  name = "secgrp-elb-Velocity"
+  name        = "trinity-secgrp-elb"
+  description = "Managed by Spirent Velocity"
 
   # Allow all outbound
   egress {

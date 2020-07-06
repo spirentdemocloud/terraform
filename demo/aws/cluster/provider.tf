@@ -12,6 +12,8 @@ terraform {
 # ------------------------------------------------------------------------------
 
 provider "aws" {
+  # These are pulled from credentials.tf which isn't checked into source control for security reasons.
+  # See https://blog.gruntwork.io/an-introduction-to-terraform-f17df9c6d180 for more information.
   access_key = var.access_key
   secret_key = var.secret_key
   region     = "us-east-2"
