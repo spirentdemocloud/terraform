@@ -15,7 +15,7 @@ resource "aws_instance" "web_server" {
               EOF
 
   tags = {
-    Name = "single-Velocity"
+    Name = "trinity-web"
   }
 }
 
