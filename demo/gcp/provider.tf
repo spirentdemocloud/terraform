@@ -12,9 +12,18 @@ terraform {
 # ------------------------------------------------------------------------------
 
 provider "google" {
-  credentials = file("service-account.json")
-  project     = "velocity-terraform"
+  # --------------
+  # The credentials file is not checked into source control for security.
+  # Follow instructions on https://www.terraform.io/docs/providers/google/guides/getting_started.html
+  # to create this file.
+  credentials = file("credentials.json")
+  # --------------
+  
+  # Ensure project matches what is specified in the credentials file.
+  project     = "velocity-trinity"
+  
   region      = "us-central1"
   zone        = "us-central1-c"
+
 }
 

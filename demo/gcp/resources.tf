@@ -3,7 +3,7 @@
 # ---------------------------------------------------------------------------------------------------------------------
 
 resource "google_compute_instance" "vm_instance" {
-  name         = "single-Velocity"
+  name         = "trinity-logic"
   machine_type = "f1-micro"
 
   boot_disk {
@@ -25,6 +25,6 @@ resource "google_compute_instance" "vm_instance" {
 # ---------------------------------------------------------------------------------------------------------------------
 
 resource "google_compute_network" "vpc_network" {
-  name                    = "network-Velocity"
+  name                    = "trinity-network"
   auto_create_subnetworks = "true"
 }
